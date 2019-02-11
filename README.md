@@ -6,11 +6,11 @@ L'application sera une version minimaliste (mais fonctionnelle, c'est le plus im
 
 Nous avons créer une base de données, composée de 3 models: User, Event, Attendance (table réunissant les events et les utilisateurs qui participent aux events)
 
-Les attributs qui composent la table User: email, description, first_name, last_name
+Les attributs qui composent la table `users`: `email`, `description`, `first_name`, `last_name`
 
-Les attributs qui composent la table Event:start_date, duration, title, description, price, location
+Les attributs qui composent la table `events`: `start_date`, `duration`, `title`, `description`, `price`, `location`
 
-Les attributs qui composent la table Attendance:, user_id, event_id
+Les attributs qui composent la table `attendances`:, `user_id`, `event_id`
 
 ## Fonctionnement : 
 
