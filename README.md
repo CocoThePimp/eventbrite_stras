@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## présentation :
 
-Things you may want to cover:
+L'application sera une version minimaliste (mais fonctionnelle, c'est le plus important) d'Eventbrite, un site qui propose plein d'événements que tu peux rejoindre. Les événements ne concernent qu'une seule ville, la ville où tu te trouves.
 
-* Ruby version
+Nous avons créer une base de données, composée de 3 models: User, Event, Attendance (table réunissant les events et les utilisateurs qui participent aux events)
 
-* System dependencies
+Les attributs qui composent la table User: email, description, first_name, last_name
 
-* Configuration
+Les attributs qui composent la table Event:start_date, duration, title, description, price, location
 
-* Database creation
+Les attributs qui composent la table Attendance:, user_id, event_id
 
-* Database initialization
+## Fonctionnement : 
 
-* How to run the test suite
+Faire un `rails db:create`et ensuite `rails db:migrate` pour migrer les DB. Pour les tests juste run la commande `rspec`. Enjoy ;)
 
-* Services (job queues, cache servers, search engines, etc.)
+## team :
 
-* Deployment instructions
-
-* ...
+By Maxime Smolis et Jonathan Lutz. 
