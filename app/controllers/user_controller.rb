@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 
-  # before_action :authenticate_user!
-  # before_action :only_see_your_own_page
+  before_action :authenticate_user!
+  before_action :only_see_your_own_page
 
   def show
     @user = User.find(params[:id])

@@ -35,11 +35,15 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Espace pro
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <% if current_user %>
+          <a class="dropdown-item" href="#">se déconnecter</a>
+        <% else%>
+          <a class="dropdown-item" href="#">se connecter</a>
+        <% end%>
           <a class="dropdown-item" href="#">Mon profil</a>
-          <a class="dropdown-item" href="#">Se déconnecter</a>
         </div>
       </li>
     </ul>
