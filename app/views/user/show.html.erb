@@ -1,0 +1,18 @@
+<h1>Bienvenue <%= @user.first_name %></h1>
+
+<h3>Voici la liste de tes évènements : </h3>
+</br>
+<div class="row">
+    <%@event.all.each do |e| %>
+      <div class="col-sm-3 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center"><%= e.title %></h5>
+            <p class="card-text text-center"><%= e.description%></p>
+            <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+          </div>
+        </div>
+      </div>
+    <% end%>
+  </div>
+

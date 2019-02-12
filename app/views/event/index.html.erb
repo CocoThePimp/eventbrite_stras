@@ -1,0 +1,25 @@
+<h1>Liste des évènements: </h1>
+</br>
+<p>Envie de créer un évènment ?  <%=link_to ' Par ici ', new_event_path, class: 'btn btn-outline-secondary'%></p>
+</br>
+<table class="table">
+  <thead>
+    <tr>
+      <%# <th scope="col">Titre</th> %>
+      <th scope="col">Titre</th>
+      <th scope="col">Date</th>
+      <th scope="col">Durée</th>
+      <th scope="col">Lieu</th>
+      <th scope="col">Prix</th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @event.each do |f|%>
+    <tr>
+      
+      <td><%= f.title %></td><td><%= f.start_date.strftime("%Y-%m-%d") %></td><td><%= f.duration %> min</td><td><%= f.location %></td><td><%= f.price %>$</td><td><%= link_to 'edit', edit_event_path(f.id), class: 'btn btn-outline-secondary' %></td> 
+    </tr>
+    <% end%>
+  </tbody>
+</table>
