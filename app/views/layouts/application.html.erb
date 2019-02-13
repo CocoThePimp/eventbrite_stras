@@ -36,12 +36,12 @@
           Espace perso
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>       
-          <span class="dropdown-item"><%= link_to "mon profil", user_path(current_user.id) %></span>
+          <span class="dropdown-item"><%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %></span>       
+          <span class="dropdown-item"><%= link_to "Mon profil", user_path(current_user.id) %></span>
         </div>
         <% else %>
         <li class="nav-item">
-        <a class="nav-link" href="<%= new_user_session_path %>">se connecter</a>
+        <a class="nav-link" href="<%= new_user_session_path %>">Se connecter</a>
       </li>
         <% end%>
       </li>
