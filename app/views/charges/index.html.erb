@@ -1,8 +1,8 @@
 <h1>La liste des invités : </h1>
 
 
-
-<%= link_to 'Éditer l\'évènement', edit_event_path(@event.id), class: 'btn btn-outline-secondary' %>
+</br>
+<p><%= link_to 'Éditer l\'évènement', edit_event_path(@event.id), class: 'btn btn-outline-secondary' %></p>
 </br>
 
 <table class="table">
@@ -17,7 +17,9 @@
   <tbody>
 <% @attendance.each do |f|  %>
     <tr> 
-      <t><%= f.user_id %></td><td><%= f.first_name %></td><td><%= f.last_name %></td><td><%= f.email %></td>
+      <td><%= f.user_id %></td>
+      
+      <%# <td> f.first_name </td><td> f.last_name</td><td> f.email </td> %>
     </tr> 
 <% end %>
 </tbody>
