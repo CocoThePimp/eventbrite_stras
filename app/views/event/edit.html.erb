@@ -1,5 +1,9 @@
 <h1>Editer l'évènement:</h1>
 
+<% if current_user == @event.user %>
+<p>Envie d'annuler l'évènement ? <a href="<%= event_path(@event.id)%>" class="btn btn-danger" data-confirm="êtes vous sur ?" data-method="DELETE" >Supprimer</a></p>
+<% end%>
+
 <%= form_tag url_for(action: 'update'), method: "patch" do %>
 <div class="form-group">
 <%= label_tag 'titre' %>

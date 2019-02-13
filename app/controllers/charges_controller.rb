@@ -9,7 +9,7 @@ class ChargesController < ApplicationController
   def new
     @event = Event.find(params[:event_id])
     @attendance = Attendance.new
-    @amount = @event.price
+    @amount = @event.price 
   end
   
   def create
@@ -23,9 +23,9 @@ class ChargesController < ApplicationController
   
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @amount,
+      :amount      => @amount * 100,
       :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+      :currency    => 'eur'
     )
 
     @attendance = Attendance.new(event_id: params[:event_id],
@@ -36,7 +36,7 @@ class ChargesController < ApplicationController
     # flash[:error] = e.message
 
     if @attendance.save
-      redirect_to event_path(@event) 
+      redirect_to root_path 
     else
       puts attendance.errors.full_messages
       render 'new'

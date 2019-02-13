@@ -1,4 +1,7 @@
 class EventController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @event = Event.all
   end
@@ -25,6 +28,7 @@ class EventController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @i = false
   end
 
   def edit
@@ -48,5 +52,11 @@ class EventController < ApplicationController
       puts @event.errors.full_messages
       render 'edit'
     end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to root_path
   end
 end
