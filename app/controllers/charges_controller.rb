@@ -1,4 +1,9 @@
 class ChargesController < ApplicationController
+  
+  def index 
+    @event = Event.find(params[:event_id])
+  end
+  
   def new
     @event = Event.find(params[:event_id])
     @attendance = Attendance.new
@@ -29,10 +34,14 @@ class ChargesController < ApplicationController
     # flash[:error] = e.message
 
     if @attendance.save
-      redirect_to root_path
+      redirect_to event_path(@event) 
     else
       puts attendance.errors.full_messages
       render 'new'
     end 
+  end
+
+  def show
+
   end
 end

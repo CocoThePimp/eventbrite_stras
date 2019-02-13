@@ -10,3 +10,5 @@
 <p><%= @event.price %></p>
 
 <%= link_to 'rejoindre l\'évènement', new_event_charge_path(@event.id), class: 'btn btn-outline-secondary' %>
+
+<%= link_to 'Mon espace de l\'évènement', event_charges_path(@event.id), class: 'btn btn-outline-secondary' %>
