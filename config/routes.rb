@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
   devise_for :users
+  resources :event do
+  resources :charges
+  end
   resources :charges
   resources :event
   resources :user

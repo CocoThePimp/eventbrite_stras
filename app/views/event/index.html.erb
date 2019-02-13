@@ -18,7 +18,7 @@
   <% @event.each do |f|%>
     <tr>
       
-      <td><%= f.title %></td><td><%= f.start_date.strftime("%Y-%m-%d") %></td><td><%= f.duration %> min</td><td><%= f.location %></td><td><%= f.price %>$</td><td><%= link_to 'edit', edit_event_path(f.id), class: 'btn btn-outline-secondary' %></td> 
+      <td><%= f.title %></td><td><%= f.start_date.strftime("%Y-%m-%d") %></td><td><%= f.duration %> min</td><td><%= f.location %></td><td><%= f.price %>$</td><td><%= link_to 'en savoir plus', event_path(f.id), class: 'btn btn-outline-secondary' %></td> 
     </tr>
     <% end%>
   </tbody>

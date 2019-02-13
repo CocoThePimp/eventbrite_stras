@@ -8,3 +8,5 @@
 <p><%= @event.duration %></p>
 <p><%= @event.location %></p>
 <p><%= @event.price %></p>
+
+<%= link_to 'rejoindre l\'évènement', new_event_charge_path(@event.id), class: 'btn btn-outline-secondary' %>
