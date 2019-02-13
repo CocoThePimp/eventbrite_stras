@@ -1,1 +1,31 @@
 <h1>Editer l'évènement:</h1>
+
+<%= form_tag url_for(action: 'update'), method: "patch" do %>
+<div class="form-group">
+<%= label_tag 'titre' %>
+<%= text_field_tag 'title', @event.title, class: 'form-control'%>
+</div>
+<div class="form-group">
+<%= label_tag 'description' %>
+<%= text_area_tag 'description', @event.description, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= label_tag 'date' %>
+<%= date_field_tag 'start_date', @event.start_date, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= label_tag 'durée' %>
+<%= number_field_tag 'duration', @event.duration, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= label_tag 'lieu' %>
+<%= text_field_tag 'location', @event.location, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= label_tag 'prix' %>
+<%= number_field_tag 'price', @event.price, class: 'form-control' %>
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Envoyer</button>
+</div>
+<% end %>

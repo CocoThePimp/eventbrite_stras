@@ -32,5 +32,21 @@ class EventController < ApplicationController
   end
 
   def update
+    @event = Event.find(params[:id])
+    if  @event.update(title: params[:title], 
+                      description: params[:description], 
+                      start_date: params[:start_date], 
+                      duration: params[:duration], 
+                      location: params[:location], 
+                      price: params[:price],
+                      user_id: current_user.id)
+      # flash[:info] = "Event successfully modified! "
+      redirect_to event_path(@event.id)
+    else 
+      puts "@" * 60
+      puts "@" * 60
+      puts @event.errors.full_messages
+      render 'edit'
+    end
   end
 end
