@@ -37,7 +37,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>       
-          <span class="dropdown-item"><%= link_to "mon profil" %></span>
+          <span class="dropdown-item"><%= link_to "mon profil", user_path(current_user.id) %></span>
         </div>
         <% else %>
         <li class="nav-item">
