@@ -9,10 +9,10 @@
 <p><%= @event.location %></p>
 <p><%= @event.price %></p>
 
-<% if is_user_but_not_admin %>
+<% if current_user != @event.user  %>
   <%= link_to 'rejoindre l\'évènement', new_event_charge_path(@event.id), class: 'btn btn-outline-secondary' %>
 <%end%>
 
-<% if is_admin %>
+<% if current_user == @event.user %>
   <%= link_to 'Mon espace', event_charges_path(@event.id), class: 'btn btn-outline-secondary' %>
-<%end%>
+<% end%>

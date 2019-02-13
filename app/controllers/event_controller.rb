@@ -1,7 +1,7 @@
 class EventController < ApplicationController
 
   before_action :authenticate_user!, only: [:show]
-  before_action :is_admin, only: [:edit, :destroy]
+  # before_action :is_admin, only: [:edit, :destroy]
 
   def index
     @event = Event.all
