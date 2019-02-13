@@ -1,6 +1,6 @@
 class EventController < ApplicationController
 
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, except: [:index]
   # before_action :is_admin, only: [:edit, :destroy]
 
   def index
