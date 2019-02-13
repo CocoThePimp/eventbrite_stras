@@ -1,6 +1,7 @@
 class EventController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, only: [:show]
+  before_action :is_admin, only: [:edit, :destroy]
 
   def index
     @event = Event.all
@@ -59,4 +60,9 @@ class EventController < ApplicationController
     @event.destroy
     redirect_to root_path
   end
+
+  def authenticate_admin
+    current_user  == Event.find(params[:id]).user ? true : false
+  end
+
 end

@@ -9,6 +9,10 @@
 <p><%= @event.location %></p>
 <p><%= @event.price %></p>
 
-<%= link_to 'rejoindre l\'évènement', new_event_charge_path(@event.id), class: 'btn btn-outline-secondary' %>
+<% if is_user_but_not_admin %>
+  <%= link_to 'rejoindre l\'évènement', new_event_charge_path(@event.id), class: 'btn btn-outline-secondary' %>
+<%end%>
 
-<%= link_to 'Mon espace de l\'évènement', event_charges_path(@event.id), class: 'btn btn-outline-secondary' %>
+<% if is_admin %>
+  <%= link_to 'Mon espace', event_charges_path(@event.id), class: 'btn btn-outline-secondary' %>
+<%end%>
